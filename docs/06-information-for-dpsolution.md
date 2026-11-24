@@ -1,106 +1,66 @@
 # Information for DPSolution
 
+![Last Revision](../assets/lastrevision.svg)
+
 Complete this handoff with customer-approved, non-secret information. Share it through the secure channel agreed with DPSolution. Do not include passwords, client secrets, certificates, tokens, private keys, or other credentials.
+
+You can download this [Excel](../assets/OnboardingWorkbook.20261101.xlsx) to collect all this information
 
 ## Customer and Environment
 
-| Parameter                | Defined in                             | Mandatory | Value |
-| ------------------------ | -------------------------------------- | --------- | ----- |
-| Customer name            | [section 01](01-Tenant-naming-rule.md) | yes       |       |
-| Customer abbreviation    | [section 01](01-Tenant-naming-rule.md) | yes       |       |
-| Azure region             | [section 01](01-Tenant-naming-rule.md) | yes       |       |
-| Tenant ID                | [section 01](01-Tenant-naming-rule.md) | yes       |       |
-| Environment name         | [section 02](02-Environemnt-names.md)  | yes       |       |
-| Environment abbreviation | [section 02](02-Environemnt-names.md)  | yes       |       |
+| Parameter                 | Description              | Source                                                                              | Value |
+| ------------------------- | ------------------------ | --------------------------------------------------------------------------------------- | ----- |
+| DPM_CUSTOMER_NAME         | Customer name            | [General names](./01-Initial-Tasks/01-01-Tenant-naming-rule.md#general-names)           |       |
+| DPM_CUSTOMER_ABBREVIATION | Customer abbreviation    | [General names](./01-Initial-Tasks/01-01-Tenant-naming-rule.md#general-names)           |       |
+| DPM_AZURE_LOCATION        | Azure region             | [General names](./01-Initial-Tasks/01-01-Tenant-naming-rule.md#general-names)           |       |
+| DPM_CUSTOMER_DOMAIN       | Main domain              | Home page of EntraID                                                                    |       |
+| DPM_CUSTOMER_TENANT_ID    | Tenant ID                | [General names](./01-Initial-Tasks/01-01-Tenant-naming-rule.md#general-names)           |       |
+| DPM_INSTANCE_NAME         | Environment name         | [Environment names](./02-Environment-Tasks/02-01-Environemnt-names.md#enviroment-names) |       |
+| DPM_INSTANCE_ABREVIATION  | Environment abbreviation | [Environment names](./02-Environment-Tasks/02-01-Environemnt-names.md#enviroment-names) |       |
+| DPM_INSTANCE_CODE         | Instance Code            | Data Platform Solutions team                                  |       |
 
 ## Microsoft Entra ID
 
 ### Service Principals
 
+| Parameter               | Description                  | Source                                                                                                                    | Value |
+| ----------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----- |
+| DPMANAGER_CLIENT_NAME   | DPManager app name           | [DPManager app name](./02-Environment-Tasks/02-01-Environemnt-names.md#service-principal-names)                               |       |
+| DPMANAGER_CLIENT_ID     | DPManager app client_id      | [DPManager app client id](./02-Environment-Tasks/02-02-EntraID-howto-dpmanager-app.md#e-collect-the-required-information)     |       |
+| DPMANAGER_CLIENT_SECRET | DPManager app client secret  | [DPManager app cliente secret](./02-Environment-Tasks/02-02-EntraID-howto-dpmanager-app.md#d-generate-an-application-secret)  |       |
+| LOADMASTER_CLIENT_ID    | Loadmaster app name          | [Loadmaster app name](./02-Environment-Tasks/02-01-Environemnt-names.md#service-principal-names)                              |       |
+| LOADMASTER_CLIENT_ID    | Loadmaster app client_id     | [Loadmaster app client id](./02-Environment-Tasks/02-03-EntraID-howto-loadmaster-app.md#e-collect-the-required-information)   |       |
+| LOADMASTER_CLIENT_ID    | Loadmaster app client secret | [Loadmaster app client secret](./02-Environment-Tasks/02-03-EntraID-howto-loadmaster-app.md#b-generate-an-application-secret) |       |
+
+### Security Groups
+
 It is important to inform the information of the service principals that should be already registered in Entra ID.
 
-| Parameter                | Description                             | Mandatory | Value                      |
-| ------------------------ | --------------------------------------- | --------- | -------------------------- |
-| DPManager Client ID      | GUID of DPManager service principal.    | yes       | *guid-necessary-to-inform* |
-| DPManager Client Name    | Name of DPManager service principal.    | yes       | *necessary-to-inform*      |
-| DPManager Client Secret  | Secret of DPManager service principal.  | yes       | *necessary-to-inform*      |
-| Loadmaster Client ID     | GUID of Loadmaster service principal.   | yes       | *necessary-to-inform*      |
-| Loadmaster Client Name   | Name of Loadmaster service principal.   | yes       | *necessary-to-inform*      |
-| Loadmaster Client Secret | Secret of Loadmaster service principal. | yes       | *necessary-to-inform*      |
-
-### User Groups
-
-It is important to create User groups in Entra ID to manage access and permissions for different types of users interacting with DPManager.
-The tool DPManager application needs to know the GUIDs of these user groups to properly manage access and permissions.
-
-| Role                | Description                                                                                                | Mandatory | User Group           | GUID                       |
-| ------------------- | ---------------------------------------------------------------------------------------------------------- | --------- | -------------------- | -------------------------- |
-| DPM Admins          | Users that can change some DPManager settings.                                                             | yes       | *DPMAdmins*          | *guid-necessary-to-inform* |
-| DPM Users           | Users that can access DPManager and access the basic forms and Manual Data                                 | yes       | *DPMUsers*           | *guid-necessary-to-inform* |
-| DPM ManualData      | Users that can modify Manual Data definitions.                                                             | yes       | *DPMManualData*      | *guid-necessary-to-inform* |
-| DPM TutorialUsers   | Users that can access to the tutorial content in DPManager. Recommended only for Dev environments.         |           | *DPMTutorialUsers*   | *guid-necessary-to-inform* |
-| Deployment Admin    | Users that can modify the status of deployment scripts. Not necessary for Productive environments.         |           | *DeploymentAdmin*    | *guid-necessary-to-inform* |
-| Deployment User     | Users that can access deployment scripts and related resources. Not necessary for Productive environments. |           | *DeploymentUser*     | *guid-necessary-to-inform* |
-| Loadmaster Executer | Users that can configure and execute jobs in Loadmaster.                                                   | yes       | *LoadmasterExecuter* | *guid-necessary-to-inform* |
-| Loadmaster Viewer   | Users that can see the log (monitoring) of Loadmaster executions.                                          | yes       | *LoadmasterViewer*   | *guid-necessary-to-inform* |
+| Parameter            | Source                                                                                                                    | Value |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----- |
+| DPMAdmins            | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| DPMMDataAdmin        | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| DPMUsers             | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| DPMTutorialUsers     | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| DeploymentUser       | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| DeploymentAdmin      | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| AzLoadMasterViewer   | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
+| AzLoadMasterExecuter | [Security Group names](./02-Environment-Tasks/02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) |       |
 
 ## Microsoft Fabric
 
-
-
-| Parameter | Description | Example |
-| --- | --- | --- |
-
-FABRIC_WORKSPACE_ID
-FABRIC_ENVIRONMENT_ID
-
-FABRIC_LAKEHOUSE_ID
-FABRIC_LAKEHOUSE_NAME
-FABRIC_LAKEHOUSE_CONNECTION_ID
-
-FABRIC_DB_CONNECTION_ID
-FABRIC_DB_BIMAN_ID
-FABRIC_DB_BIMAN_NAME
-FABRIC_DB_BIMAN_CSTRING
-FABRIC_DB_LOADMASTER_ID
-FABRIC_DB_LOADMASTER_NAME
-FABRIC_DB_LOADMASTER_CSTRING
-FABRIC_DB_DPMU_CSTRING
-
-
-
-
-| Fabric workspace name | Customer-approved workspace name. | `Contoso-DPManager-prod` |
-| Fabric workspace ID | Workspace identifier used to locate the deployment target. | `55555555-5555-5555-5555-555555555555` |
-| Workspace URL | Link to the Fabric workspace, if available. | `https://app.fabric.microsoft.com/groups/[workspace-id]` |
-| Fabric capacity/region | Capacity name or identifier and region hosting the workspace. | `Contoso F64 / East US` |
-| Lakehouse name and item ID | Name and identifier of the target lakehouse. | `dpm_lakehouse / [item ID]` |
-| `dpmu` SQL database | Database item identifier and approved non-secret connection metadata. | `[item ID] / [server or endpoint]` |
-| `bi_man` SQL database | Database item identifier and approved non-secret connection metadata. | `[item ID] / [server or endpoint]` |
-| `loadmaster` SQL database | Database item identifier and approved non-secret connection metadata. | `[item ID] / [server or endpoint]` |
-| Fabric connection names and IDs | Connection name/identifier for the lakehouse and each SQL database. | `DPManager-prod-lakehouse / [connection ID]` |
-
-## Access and Contacts
-
-| Parameter | Description | Example |
-| --- | --- | --- |
-| Fabric API setting scope | Whether service-principal API access is enabled and the group/scope to which it applies. | Enabled for `Contoso-DPManager-prod-FabricAPI` |
-| Workspace roles granted | Confirmed role(s) for each application or group. | `[Role confirmed with DPSolution]` |
-| Entra administrator | Customer contact who can manage app registrations, groups, and consent. | `admin@example.com` |
-| Fabric administrator | Customer contact who can manage tenant settings and workspace access. | `fabric-admin@example.com` |
-| Technical contact | Customer contact for deployment coordination and testing. | `Jane Doe / jane@example.com` |
-| DPSolution contact | DPSolution contact coordinating the deployment. | `[Name / email]` |
-| Target deployment date/window | Customer's preferred deployment timing and time zone. | `2026-02-10, 09:00-12:00 Eastern` |
-
-## Readiness Confirmation
-
-| Check | Status | Notes / owner |
-| --- | --- | --- |
-| Environment name and abbreviation approved | [Status] | [Notes] |
-| App registrations and service principals created | [Status] | [Notes] |
-| Entra groups created and reviewed | [Status] | [Notes] |
-| Fabric workspace and required data assets created | [Status] | [Notes] |
-| Four Fabric connections created and tested | [Status] | [Notes] |
-| Fabric API access configured for approved scope | [Status] | [Notes] |
-| Workspace access configured and validated | [Status] | [Notes] |
-| Exact permissions and authentication method confirmed with DPSolution | [Status] | [Notes] |
+| Parameter                      | Source                                                                                                              | Value |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- | ----- |
+| FABRIC_WORKSPACE_ID            | [Workspace](./02-Environment-Tasks/02-05-Fabric-preparation.md#1-create-workspace)                                  |       |
+| FABRIC_ENVIRONMENT_ID          | [Environment](./02-Environment-Tasks/02-05-Fabric-preparation.md#2-create-environment)                              |       |
+| FABRIC_LAKEHOUSE_NAME          | [Fabric object names](./02-Environment-Tasks/02-01-Environemnt-names.md#fabric-object-names)                        |       |
+| FABRIC_LAKEHOUSE_ID            | [Lakehouse](./02-Environment-Tasks/02-05-Fabric-preparation.md#3-create-lakehouse)                                  |       |
+| FABRIC_LAKEHOUSE_CONNECTION_ID | [Lakehouse connection ID](./01-Initial-Tasks/01-02-tasks-shared.md#2b-create-connection-to-fabric-lakehouse)        |       |
+| FABRIC_DB_CONNECTION_ID        | [SQL Database connection ID](./01-Initial-Tasks/01-02-tasks-shared.md#2a-create-connection-to-fabric-sql-databases) |       |
+| FABRIC_DB_BIMAN_NAME           | [Fabric object names](./02-Environment-Tasks/02-01-Environemnt-names.md#fabric-object-names)                        |       |
+| FABRIC_DB_BIMAN_ID             | [Creation SQL database](./02-Environment-Tasks/02-05-Fabric-preparation.md#4-create-databases)                      |       |
+| FABRIC_DB_BIMAN_CSTRING        | [Get SQL connection string](./02-Environment-Tasks/02-05-Fabric-preparation.md#4c-get-connection-string)            |       |
+| FABRIC_DB_LOADMASTER_NAME      | [Fabric object names](./02-Environment-Tasks/02-01-Environemnt-names.md#fabric-object-names)                        |       |
+| FABRIC_DB_LOADMASTER_ID        | [Creation SQL database](./02-Environment-Tasks/02-05-Fabric-preparation.md#4-create-databases)                      |       |
+| FABRIC_DB_LOADMASTER_CSTRING   | [Get SQL connection string](./02-Environment-Tasks/02-05-Fabric-preparation.md#4c-get-connection-string)            |       |
+| FABRIC_DB_DPMU_CSTRING         | [Get SQL connection string](./02-Environment-Tasks/02-05-Fabric-preparation.md#4c-get-connection-string)            |       |
