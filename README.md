@@ -1,5 +1,7 @@
 # DPManager Deployment Requirements
 
+Last Revision: 23/11/2026
+
 This document set captures the information and setup required before DPSolution can begin deploying DPManager in your Microsoft Azure and Fabric environment. Complete the customer-owned decisions and prerequisites, then share the requested handoff information with your DPSolution contact.
 
 ## Start Here
@@ -21,13 +23,13 @@ This is a preparation template, not a final permissions specification. DPSolutio
 
 ## Prerequisite Summary
 
-| Area | Required setup |
-| --- | --- |
+| Area               | Required setup                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
 | Microsoft Entra ID | App registrations and service principals for `DPManager` and `Loadmaster`; agreed security groups |
-| Microsoft Fabric | A workspace, one lakehouse, and SQL databases named `dpmu`, `bi_man`, and `loadmaster` |
-| Fabric connections | A connection to the lakehouse and a connection to each of the three SQL databases |
-| Access | Service-principal access to the required Fabric REST APIs and appropriate workspace access |
-| Handoff | Environment details, tenant and resource identifiers, contacts, and confirmed setup status |
+| Microsoft Fabric   | A workspace, one lakehouse, and SQL databases named `dpmu`, `bi_man`, and `loadmaster`            |
+| Fabric connections | A connection to the lakehouse and a connection to each of the three SQL databases                 |
+| Access             | Service-principal access to the required Fabric REST APIs and appropriate workspace access        |
+| Handoff            | Environment details, tenant and resource identifiers, contacts, and confirmed setup status        |
 
 ## Document Status
 

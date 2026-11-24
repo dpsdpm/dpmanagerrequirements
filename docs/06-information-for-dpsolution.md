@@ -4,14 +4,14 @@ Complete this handoff with customer-approved, non-secret information. Share it t
 
 ## Customer and Environment
 
-| Parameter | Description | Mandatory | Value / Example |
-| --- | --- | --- | --- |
-| Customer name | Legal name for the customer. | yes | Contoso |
-| Customer abbreviation | Customer-approved short value used in naming and configuration. | yes | cont |
-| Environment name | Customer-approved name for the environment associated to this deployment. | yes | Development |
-| Environment abbreviation | Customer-approved short value used in naming and configuration. | yes | dev |
-| Azure region | Region selected by the customer, if applicable to the deployment. | yes | East US |
-| Tenant ID | GUID of Microsoft Entra tenant identifier containing the app registrations. | yes | *guid-necessary-to-inform* |
+| Parameter                | Defined in                             | Mandatory | Value |
+| ------------------------ | -------------------------------------- | --------- | ----- |
+| Customer name            | [section 01](01-Tenant-naming-rule.md) | yes       |       |
+| Customer abbreviation    | [section 01](01-Tenant-naming-rule.md) | yes       |       |
+| Azure region             | [section 01](01-Tenant-naming-rule.md) | yes       |       |
+| Tenant ID                | [section 01](01-Tenant-naming-rule.md) | yes       |       |
+| Environment name         | [section 02](02-Environemnt-names.md)  | yes       |       |
+| Environment abbreviation | [section 02](02-Environemnt-names.md)  | yes       |       |
 
 ## Microsoft Entra ID
 
@@ -19,30 +19,30 @@ Complete this handoff with customer-approved, non-secret information. Share it t
 
 It is important to inform the information of the service principals that should be already registered in Entra ID.
 
-| Parameter | Description | Mandatory | Value |
-| --- | --- | --- | --- |
-| DPManager Client ID | GUID of DPManager service principal. | yes | *guid-necessary-to-inform* |
-| DPManager Client Name | Name of DPManager service principal. | yes | *necessary-to-inform* |
-| DPManager Client Secret | Secret of DPManager service principal. | yes | *necessary-to-inform* |
-| Loadmaster Client ID | GUID of Loadmaster service principal. | yes | *necessary-to-inform* |
-| Loadmaster Client Name | Name of Loadmaster service principal. | yes | *necessary-to-inform* |
-| Loadmaster Client Secret | Secret of Loadmaster service principal. | yes | *necessary-to-inform* |
+| Parameter                | Description                             | Mandatory | Value                      |
+| ------------------------ | --------------------------------------- | --------- | -------------------------- |
+| DPManager Client ID      | GUID of DPManager service principal.    | yes       | *guid-necessary-to-inform* |
+| DPManager Client Name    | Name of DPManager service principal.    | yes       | *necessary-to-inform*      |
+| DPManager Client Secret  | Secret of DPManager service principal.  | yes       | *necessary-to-inform*      |
+| Loadmaster Client ID     | GUID of Loadmaster service principal.   | yes       | *necessary-to-inform*      |
+| Loadmaster Client Name   | Name of Loadmaster service principal.   | yes       | *necessary-to-inform*      |
+| Loadmaster Client Secret | Secret of Loadmaster service principal. | yes       | *necessary-to-inform*      |
 
 ### User Groups
 
 It is important to create User groups in Entra ID to manage access and permissions for different types of users interacting with DPManager.
 The tool DPManager application needs to know the GUIDs of these user groups to properly manage access and permissions.
 
-| User Group | Description | Mandatory | GUID |
-| --- | --- | --- | --- |
-| DPMAdmins | Users that can change some DPManager settings. | yes | *guid-necessary-to-inform* |
-| DPMUsers | Users that can access DPManager and access the basic forms and Manual Data | yes | *guid-necessary-to-inform* |
-| DPMManualData | Users that can modify Manual Data definitions. | yes | *guid-necessary-to-inform* |
-| DPMTutorialUsers | Users that can access to the tutorial content in DPManager. Recommended only for Dev environments. | | *guid-necessary-to-inform* |
-| DeploymentAdmin | Users that can modify the status of deployment scripts. Not necessary for Productive environments. | | *guid-necessary-to-inform* |
-| DeploymentUser | Users that can access deployment scripts and related resources. Not necessary for Productive environments. | | *guid-necessary-to-inform* |
-| LoadmasterExecuter | Users that can configure and execute jobs in Loadmaster. | yes | *guid-necessary-to-inform* |
-| LoadmasterViewer | Users that can see the log (monitoring) of Loadmaster executions. | yes | *guid-necessary-to-inform* |
+| Role                | Description                                                                                                | Mandatory | User Group           | GUID                       |
+| ------------------- | ---------------------------------------------------------------------------------------------------------- | --------- | -------------------- | -------------------------- |
+| DPM Admins          | Users that can change some DPManager settings.                                                             | yes       | *DPMAdmins*          | *guid-necessary-to-inform* |
+| DPM Users           | Users that can access DPManager and access the basic forms and Manual Data                                 | yes       | *DPMUsers*           | *guid-necessary-to-inform* |
+| DPM ManualData      | Users that can modify Manual Data definitions.                                                             | yes       | *DPMManualData*      | *guid-necessary-to-inform* |
+| DPM TutorialUsers   | Users that can access to the tutorial content in DPManager. Recommended only for Dev environments.         |           | *DPMTutorialUsers*   | *guid-necessary-to-inform* |
+| Deployment Admin    | Users that can modify the status of deployment scripts. Not necessary for Productive environments.         |           | *DeploymentAdmin*    | *guid-necessary-to-inform* |
+| Deployment User     | Users that can access deployment scripts and related resources. Not necessary for Productive environments. |           | *DeploymentUser*     | *guid-necessary-to-inform* |
+| Loadmaster Executer | Users that can configure and execute jobs in Loadmaster.                                                   | yes       | *LoadmasterExecuter* | *guid-necessary-to-inform* |
+| Loadmaster Viewer   | Users that can see the log (monitoring) of Loadmaster executions.                                          | yes       | *LoadmasterViewer*   | *guid-necessary-to-inform* |
 
 ## Microsoft Fabric
 
