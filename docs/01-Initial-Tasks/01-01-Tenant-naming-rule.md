@@ -1,11 +1,12 @@
-# 01.01 Customer naming convetion
+# 01.01 Customer naming convention
 
 ![Last Revision](../../assets/lastrevision.svg)
 
-This document will try to guide you to define all the necessary names for the different services, objects and policies to integrate DPManager with a customer's tenant.
+This document guides you through defining all the necessary names for the different services, objects, and policies required to integrate DPManager with a customer's tenant.
 
 ## General names
-This is the first data that needs to be defined together with the customer.
+
+The following are the first data points that must be defined together with the customer.
 
 |                       | Responsable | Example only  | Value |
 | --------------------- | ----------- | ------------- | ----- |
@@ -15,9 +16,9 @@ This is the first data that needs to be defined together with the customer.
 | Tenant ID             | IT Customer | *guid*        |       |
 | Main domain           | IT Customer | *contoso.com* |       |
 
-## Security Group 
+## Security Group
 
-Also, it would be necessary to define a EntraId Security Group to include all the Service Principal that should have the rights to Create/Modify objects in Microsoft Fabric Workspaces. Also they could trigger objects like Notebook, Pipeline and Dataflows
+You must also define an Entra ID Security Group to include all Service Principals that require rights to create or modify objects in Microsoft Fabric Workspaces. These groups also enable triggering of objects such as Notebooks, Pipelines, and Dataflows.
 
 |                           | Resposable  | Example                     | Value |
 | ------------------------- | ----------- | --------------------------- | ----- |

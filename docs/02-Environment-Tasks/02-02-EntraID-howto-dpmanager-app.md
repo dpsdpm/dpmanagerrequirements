@@ -14,6 +14,8 @@ For the DPManager .NET web application, you must register an application in Micr
 
 - Complete the registration form:
 
+> Remember the name of the DPManager app has been set here: [Service principal names](../02-Environment-Tasks/02-01-Environemnt-names.md#service-principal-names)
+
 ![EntraId-Register-App](../../assets/image_entraid_003.jpg)
 
 > To complete the registration, you would need to know the Redirect URI. This information can be delivered by Data Platform Solutions AG member.  
@@ -40,7 +42,7 @@ For the DPManager .NET web application, you must register an application in Micr
 
 ## C. Configure the token
 
-Configure the groups claim that the application receives in the token after a user is authenticated.
+Configure the groups claim that the application receives in the token after user authentication.
 
 - Go to `Token configuration` and select `Add groups claim`.  
 
@@ -55,7 +57,8 @@ Configure the groups claim that the application receives in the token after a us
 
 ## D. Generate an application secret
 
-Generate a client secret so that DPManager can identify itself as the registered application.  
+Generate a client secret to allow DPManager to identify itself as the registered application.
+
 ![EntraId-Register-App](../../assets/image_entraid_008_a.jpg)
 
 > **Important:** The client secret value is only displayed once immediately after creation. If you navigate away, close the page, or exit your browser, you won't be able to retrieve it—you'll need to create a new secret instead. Save the value securely before proceeding.
@@ -64,12 +67,12 @@ Generate a client secret so that DPManager can identify itself as the registered
 
 ## E. Collect the required information
 
-- **Tenant ID and domain:** You can find these on the Microsoft Entra ID overview page.  
+- **Tenant ID and domain:** You can find these on the Microsoft Entra ID overview page.
 
 ![EntraId-Register-App](../../assets/image_entraid_010.jpg)
 
-- **Client ID:** You can find this on the overview page for the application you created in the previous steps.  
+- **Client ID:** You can find this on the overview page of the application you created in the previous steps.
 
 ![EntraId-Register-App](../../assets/image_entraid_011.jpg)
 
-- **Client secret:** This was generated in step D. Remember that you can view the secret value only once.
+- **Client secret:** This was generated in step D. Remember that the secret value is only visible once.

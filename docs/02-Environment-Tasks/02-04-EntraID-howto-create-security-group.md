@@ -2,15 +2,14 @@
 
 ![Last Revision](../../assets/lastrevision.svg)
 
-To create all the groups that have been set here: [Security group names](02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups) it is necessary access to `Entra ID` in Azure.  
-From `Entra ID` access to `Groups`
+To create all the groups defined in [Security group names](02-01-Environemnt-names.md#dpmanager-and-roles-and-entraid-security-groups), access `Entra ID` in Azure and navigate to `Groups`.
 
-![](../../assets/image_entraid_201.jpg)
+![Enter in EntraID](../../assets/image_entraid_201.jpg)
 
-Do click in `New group`
+Click on `New group`.
 
-![](../../assets/image_entraid_202.jpg)
+![New Group](../../assets/image_entraid_202.jpg)
 
-Fill the name for the new Security Group and set an owner.
+Enter the name for the new Security Group and assign an owner.
 
-![](../../assets/image_entraid_203.jpg)
+![Name and owner](../../assets/image_entraid_203.jpg)

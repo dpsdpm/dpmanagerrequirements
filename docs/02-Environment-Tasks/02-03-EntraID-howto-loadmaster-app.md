@@ -8,19 +8,20 @@ For the Loadmaster orchestrator, you must register an application in Microsoft E
 
 ## A. Register a new application
 
-- Open `Microsoft Entra ID` and, in the left-hand menu, select `App registrations`, then select `New registration`.  
+- Open `Microsoft Entra ID` and select `App registrations` from the left-hand menu, then select `New registration`.
 
 ![EntraId-Register-App](../../assets/image_entraid_002.jpg)
 
-- Complete the registration form:
+- Complete the registration form with the application details:
 
-You can find the name for DPManager and the URL ( or URLS ) you need to set on [Link Text](path/to/other-file.md#section-heading) TODO: update link
+> Remember the name of the DPManager app has been set here: [Service principal names](../02-Environment-Tasks/02-01-Environemnt-names.md#service-principal-names)
 
 ![EntraId-Register-App](../../assets/image_entraid_101.jpg)
 
 ## B. Generate an application secret
 
-Generate a client secret so that DPManager can identify itself as the registered application.  
+Generate a client secret to allow Loadmaster to identify itself as the registered application.
+
 ![EntraId-Register-App](../../assets/image_entraid_008_b.jpg)
 
 > **Important:** The client secret value is only displayed once immediately after creation. If you navigate away, close the page, or exit your browser, you won't be able to retrieve it—you'll need to create a new secret instead. Save the value securely before proceeding.
@@ -29,12 +30,12 @@ Generate a client secret so that DPManager can identify itself as the registered
 
 ## E. Collect the required information
 
-- **Tenant ID and domain:** You can find these on the Microsoft Entra ID overview page.  
+- **Tenant ID and domain:** You can find these on the Microsoft Entra ID overview page.
 
 ![EntraId-Register-App](../../assets/image_entraid_010.jpg)
 
-- **Client ID:** You can find this on the overview page for the application you created in the previous steps.  
+- **Client ID:** You can find this on the overview page of the application you created in the previous steps.
 
 ![EntraId-Register-App](../../assets/image_entraid_011.jpg)
 
-- **Client secret:** This was generated in step b. Remember that you can view the secret value only once.
+- **Client secret:** This was generated in step B. Remember that the secret value is only visible once.

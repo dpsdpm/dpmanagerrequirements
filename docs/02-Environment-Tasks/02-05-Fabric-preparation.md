@@ -2,64 +2,63 @@
 
 ![Last Revision](../../assets/lastrevision.svg)
 
-This document will try to guide you to prepare Microsoft Fabric for a environment 
+This document guides you through preparing Microsoft Fabric for a new environment.
 
 ## 1. Create workspace
 
-It is necessary to create the workspace where all the objects will be deployed.  
-It is important to select the proper Fabric Capacity. Confirm this capacity is the same Azure Zone defined here: [Customer naming convention](01-Tenant-naming-rule.md#customer-naming-convetion)  
+Create the workspace where all objects will be deployed. Select the appropriate Fabric Capacity that matches the Azure Zone defined in [Customer naming convention](01-Tenant-naming-rule.md#customer-naming-convention).
 
-The name of the workspace has been set here: [Fabric object names](02-Environemnt-names.md#fabric-object-names)
+The workspace name has been defined in [Fabric object names](02-Environemnt-names.md#fabric-object-names).
 
-> Dont forget to get and keep the GUID of this workspace
+> Save and store the GUID of this workspace.
 
 ### 1.a Set capacity
 
-Set the Fabric Capacity in the workspace
+Configure the Fabric Capacity for the workspace.
 
 ![Microsoft Fabric environment](../../assets/image_fabric_001.jpg)
 
 ### 1.b Add access
 
-Add as `Contributor` the service principal of Loadmaster. Remember the name of the Loadmaster service principal has been set in [Service principal names](02-Environemnt-names.md#service-principal-names)  
-Also, add the consultant users as `Contributor` as well.
+Add the Loadmaster service principal with the `Contributor` role. The Loadmaster service principal name is defined in [Service principal names](02-Environemnt-names.md#service-principal-names).
+
+Also add your consultant users as `Contributor`.
 
 ![Microsoft Fabric environment](../../assets/image_fabric_004.jpg)
 
 ## 2. Create environment
 
-It is necessary to create enviornment in the workspace.  
-It is not necessary to apply any change inside of this environment. DPManager will apply all the necessary changes.
+Create an environment in the workspace. No configuration changes are needed at this stage—DPManager will apply all required settings.
 
 ![Microsoft Fabric environment](../../assets/image_fabric_002.jpg)
 
-> Dont forget to get and keep the GUID of this environment
+> Save and store the GUID of this environment.
 
 ## 3. Create Lakehouse
 
-The next step would be create the lakehouse
+Create the lakehouse in the workspace.
 
 ![Microsoft Fabric environment](../../assets/image_fabric_003.jpg)
 
-> Dont forget to get and keep the GUID of this lakehouse
+> Save and store the GUID of this lakehouse.
 
 ## 4. Create Databases
 
-Now, it is necessary to create the different databases.
+Create the required SQL databases in the workspace.
 
 ![Microsoft Fabric environment](../../assets/image_fabric_005.jpg)
 
 ### 4.a Create databases
 
-The SQL database that need to be created are:
+The following SQL databases must be created using the names defined in [Fabric object names](02-Environemnt-names.md#fabric-object-names):
 
-- dpmu : use the name set here [Fabric object names](02-Environemnt-names.md#fabric-object-names)
-- biman : use the name set here [Fabric object names](02-Environemnt-names.md#fabric-object-names)
-- loadmaster : use the name set here [Fabric object names](02-Environemnt-names.md#fabric-object-names)
+- dpmu
+- biman
+- loadmaster
 
 ### 4.b Add Service principal as Owner
 
-After the creation it is necessary to add the loadmaster service principal in the 'owner' role in the database.
+After database creation, add the Loadmaster service principal with the 'owner' role using the following SQL commands:
 
 ```sql
 CREATE USER [{app-loadmaster-name}] FROM EXTERNAL PROVIDER;
@@ -70,12 +69,9 @@ GO
 
 ### 4.c Get connection string
 
-After the creation it is necessary to get the connection string for the deployment process.  
-This a information requested in by Data Platform Solutions.
+After database creation, obtain the connection string needed for the deployment process. In Fabric, enter each database and navigate to settings.
 
-To get the connection string, it necessary, in Fabric, to enter in the database and access to the settings.
-
-In the setting, select `Connection strings`. Be sure that `ADO.NET` is selected.
+In the settings, select `Connection strings` and ensure `ADO.NET` is selected.
 
 ![Get connection string](../../assets/image_fabric_009.jpg)
 

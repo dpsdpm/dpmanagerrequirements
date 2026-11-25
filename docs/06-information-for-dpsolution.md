@@ -2,9 +2,9 @@
 
 ![Last Revision](../assets/lastrevision.svg)
 
-Complete this handoff with customer-approved, non-secret information. Share it through the secure channel agreed with DPSolution. Do not include passwords, client secrets, certificates, tokens, private keys, or other credentials.
+Complete this handoff using customer-approved, non-secret information. Share it through the secure channel agreed upon with DPSolution. Do not include passwords, client secrets, certificates, tokens, private keys, or other credentials.
 
-You can download this [Excel](../assets/OnboardingWorkbook.20261101.xlsx) to collect all this information
+You can use this [Excel](../assets/OnboardingWorkbook.20261101.xlsx) workbook to collect all required information.
 
 ## Customer and Environment
 
@@ -58,9 +58,9 @@ It is important to inform the information of the service principals that should 
 | FABRIC_LAKEHOUSE_CONNECTION_ID | [Lakehouse connection ID](./01-Initial-Tasks/01-02-tasks-shared.md#2b-create-connection-to-fabric-lakehouse)        |       |
 | FABRIC_DB_CONNECTION_ID        | [SQL Database connection ID](./01-Initial-Tasks/01-02-tasks-shared.md#2a-create-connection-to-fabric-sql-databases) |       |
 | FABRIC_DB_BIMAN_NAME           | [Fabric object names](./02-Environment-Tasks/02-01-Environemnt-names.md#fabric-object-names)                        |       |
-| FABRIC_DB_BIMAN_ID             | [Creation SQL database](./02-Environment-Tasks/02-05-Fabric-preparation.md#4-create-databases)                      |       |
+| FABRIC_DB_BIMAN_ID             | [SQL database creation](./02-Environment-Tasks/02-05-Fabric-preparation.md#4-create-databases)                      |       |
 | FABRIC_DB_BIMAN_CSTRING        | [Get SQL connection string](./02-Environment-Tasks/02-05-Fabric-preparation.md#4c-get-connection-string)            |       |
 | FABRIC_DB_LOADMASTER_NAME      | [Fabric object names](./02-Environment-Tasks/02-01-Environemnt-names.md#fabric-object-names)                        |       |
-| FABRIC_DB_LOADMASTER_ID        | [Creation SQL database](./02-Environment-Tasks/02-05-Fabric-preparation.md#4-create-databases)                      |       |
+| FABRIC_DB_LOADMASTER_ID        | [SQL database creation](./02-Environment-Tasks/02-05-Fabric-preparation.md#4-create-databases)                      |       |
 | FABRIC_DB_LOADMASTER_CSTRING   | [Get SQL connection string](./02-Environment-Tasks/02-05-Fabric-preparation.md#4c-get-connection-string)            |       |
 | FABRIC_DB_DPMU_CSTRING         | [Get SQL connection string](./02-Environment-Tasks/02-05-Fabric-preparation.md#4c-get-connection-string)            |       |
